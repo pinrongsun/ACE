@@ -739,7 +739,7 @@ Partial Class Program
             If Request.QueryString("DeviceID") IsNot Nothing Then query &= "&DeviceID=" & Request.QueryString("DeviceID").ToString
             If Request.QueryString("PresenterID") IsNot Nothing Then query &= "&PresenterID=" & Request.QueryString("PresenterID").ToString
 
-            Response.Redirect("~/ProgramDetail.aspx" & query)
+            Response.Redirect("~/ProgramDetailMonitor.aspx" & query)
         End If
     End Sub
 

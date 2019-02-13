@@ -236,7 +236,7 @@ Partial Class ProgramDetail
                 query &= "&DeviceID=" & Request.QueryString("DeviceID").ToString()
             End If
 
-            Response.Redirect("~/Program.aspx" & query)
+            Response.Redirect("~/ProgramMonitor.aspx" & query)
         End If
     End Sub
     Private Function GetUser(ByVal DisplayFields As String, ByVal SortField As String, ByVal Condition As String, ByVal SortOrder As String) As DataSet
@@ -438,7 +438,7 @@ Partial Class ProgramDetail
             End If
             If Request.QueryString("PresenterID") IsNot Nothing Then query &= "&PresenterID=" & Request.QueryString("PresenterID").ToString
 
-            Response.Redirect("~/Program.aspx" & query)
+            Response.Redirect("~/ProgramMonitor.aspx" & query)
         End If
     End Sub
 End Class
