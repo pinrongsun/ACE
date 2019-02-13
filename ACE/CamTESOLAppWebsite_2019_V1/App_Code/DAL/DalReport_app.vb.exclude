@@ -1,0 +1,60 @@
+﻿Imports CrystalDecisions.CrystalReports
+Imports CrystalDecisions.Shared
+Imports CrystalDecisions.CrystalReports.Engine
+
+Public Class DalReport_app
+
+    Private Shared BorrowsInstance As DalReport_app
+
+    Public Shared ReadOnly Property Instance As DalReport_app
+        Get
+            If BorrowsInstance Is Nothing Then
+                BorrowsInstance = New DalReport_app
+            End If
+            Return BorrowsInstance
+        End Get
+    End Property
+
+    'protected static Queue reportQueue = new Queue();
+    Protected reportQueue As Queue = New Queue()
+    'protected static int iMaxCount = 75;
+    Protected iMaxCount As Integer = 1
+
+    'protected static ReportDocument CreateReport(Type reportClass)
+    '{
+    'object report = Activator.CreateInstance(reportClass);
+    'reportQueue.Enqueue(report);
+    'return (ReportDocument)report;
+    '}
+
+    Public Function CreateReport(ByVal reportClass As Type) As ReportDocument
+        Dim report As Object = Activator.CreateInstance(reportClass)
+        reportQueue.Enqueue(report)
+        Return report
+    End Function
+
+    'public static ReportDocument GetReport(Type reportClass)
+    '{
+    'if (reportQueue.Count > iMaxCount)
+    '{
+    '((ReportDocument)reportQueue.Dequeue()).Close();
+    '((ReportDocument)reportQueue.Dequeue()).Dispose();
+    'GC.Collect();
+    '}
+    'return CreateReport(reportClass);
+    '}
+
+    'Public Function GetReport(ByVal reportClass As Type) As ReportDocument
+    '    If reportQueue.Count > iMaxCount Then
+    '        CType(reportQueue.Dequeue, ReportDocument).Close()
+    '        CType(reportQueue.Dequeue, ReportDocument).Dispose()
+    '        GC.Collect()
+    '        Return CreateReport(reportClass)
+    '    Else
+    '        Return CreateReport(reportClass)
+    '    End If
+
+    'End Function
+
+
+End Class

@@ -1,0 +1,119 @@
+﻿.popupPanel, .popupPanelLoader{
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #232222;
+    opacity: 0.6;
+    z-index: 1012;
+}
+
+.popupPanelLoader{
+    display: block;
+}
+.popupBox{
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    box-shadow: 0 2px 20px #6f6f6f;
+    max-width: 700px;
+    z-index: 1012;
+    max-height: 90%;
+    overflow: auto;
+    border-radius: 10px;
+}
+
+.popupHeader{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background:none;
+}
+
+.popupFooter{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.popupHeader, .popupFooter{
+    padding: 6px;
+    background-color: #dadada;
+    background-color: white;
+}
+
+.popupBody{
+    background-color: #ececec;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 12px;
+}
+
+.popupControlBox{
+    text-align: center;
+}
+
+.popupTitle{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 7px;
+    color: #777777;
+}
+
+.popupContent{
+    text-align: center;
+}
+
+.popupYes, .popupNo{
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    box-shadow: 0 5px 10px lightgrey;
+    color: white;
+    transition: box-shadow 0.7s;
+    cursor: pointer;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+.popupYes{
+    background-color: #2d94d4;
+    border-radius: 5px;
+}
+
+.popupNo{
+    background-color: #d28d2a;
+    border-radius: 5px;
+}
+
+.popupYes:hover, .popupNo:hover{
+    box-shadow: 0 5px 10px #adadad;    
+}
+.speakerPhoto{
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    width: 100px;
+    max-height: 100px;
+}
+.loader{
+    border-radius: 50%;
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    width: 70px;
+    height: 70px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	z-index: 1012;
+}

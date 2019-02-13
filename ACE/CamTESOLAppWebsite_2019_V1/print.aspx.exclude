@@ -1,0 +1,174 @@
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="print.aspx.vb" Inherits="print" %>
+
+<%@ Register assembly="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" namespace="CrystalDecisions.Web" tagprefix="CR" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+table{background-color:transparent}table{border-spacing:0;border-collapse:collapse}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}*,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}td,th{padding:0}button,input,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}input{line-height:normal}button,input,optgroup,select,textarea{margin:0;font:inherit;color:inherit}textarea{overflow:auto}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}b,strong{font-weight:700}
+ @media print {
+body {-webkit-print-color-adjust: exact;}
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+                                        <asp:Panel ID="PanelReportEnroll" runat="server" BorderStyle="None" 
+                   Width="20.7cm" Height="29.5cm">
+                                            <div>
+
+                                                <table align="center" style="font-family: 'buenos Aires TTF'">
+                                                    <tr>
+                                                        <td style="height:2cm;width:9.5cm">&nbsp;</td>
+                                                        <td style="width:9.5cm">&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="height:7cm;" align="center">
+                                                            <table>
+                                                                <tr>
+                                                                    <td align="center">
+                                                                        <asp:Label ID="lblGivenName" runat="server" Font-Size="23pt">GivenName</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" style="padding-top: 5px">
+                                                                        <asp:Label ID="lblFamilyName" runat="server" Font-Size="23pt">FAMILYNAME</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="padding-top: 10px" align="center">
+                                                                        <asp:Label ID="lblPosition" runat="server" Font-Size="14pt">Position</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" style="padding-top: 5px">
+                                                                        <asp:Label ID="lblEmployer" runat="server" Font-Size="14pt">Employer</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td style="height:7cm;" align="center" >
+                                                            <table>
+                                                                <tr>
+                                                                    <td align="center">
+                                                                        <asp:Label ID="lblGivenName0" runat="server" Font-Size="23pt">GivenName</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" style="padding-top: 5px">
+                                                                        <asp:Label ID="lblFamilyName0" runat="server" Font-Size="23pt">FAMILYNAME</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" style="padding-top: 10px">
+                                                                        <asp:Label ID="lblPosition0" runat="server" Font-Size="14pt">Position</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center" style="padding-top: 5px">
+                                                                        <asp:Label ID="lblEmployer0" runat="server" Font-Size="14pt">Employer</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right">
+                                                            <table>
+                                                                <tr>
+                                                                    <td align="center" style="width:1.5cm;padding-bottom:5px;">
+                                                                        &nbsp;</td>
+                                                                    <td align="center" style="width:3.8cm;padding-bottom:5px;">
+                                                                        <asp:Label ID="lblConfDays" runat="server" Font-Size="11pt">Days</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center">
+                                                                        <asp:Label ID="lblDietary" runat="server" Font-Size="11pt">D</asp:Label>
+                                                                    </td>
+                                                                    <td align="center">
+                                                                        <asp:Label ID="lblBarcode" runat="server" Font-Names="IDAutomationHC39M" Font-Size="10pt" Height="30px">*D0001*</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                    <td>
+                                                                        <div style="
+    background-color: white !important;
+    position: relative;
+    height: 20px;
+    top: -10px;
+    text-align: center;
+    /* left: -1px; */
+    font-size: 12pt;
+    padding-top: 5px;
+">
+                                                                            <asp:Label ID="lblRegistrationID" runat="server" Font-Size="12pt">RegID</asp:Label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                        <td align="right">
+                                                            <table>
+                                                                <tr>
+                                                                    <td align="center" style="width:1.5cm;padding-bottom:5px;">&nbsp;</td>
+                                                                    <td align="center" style="width:3.8cm;padding-bottom:5px;">
+                                                                        <asp:Label ID="lblConfDays0" runat="server" Font-Size="11pt">Days</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td align="center">
+                                                                        <asp:Label ID="lblDietary0" runat="server" Font-Size="11pt">D</asp:Label>
+                                                                    </td>
+                                                                    <td align="center">
+                                                                        <asp:Label ID="lblBarcode0" runat="server" Font-Names="IDAutomationHC39M" Font-Size="10pt" Height="30px">*D0001*</asp:Label>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                    <td>
+                                                                        <div style="
+    background-color: white !important;
+    position: relative;
+    height: 20px;
+    top: -10px;
+    text-align: center;
+    /* left: -1px; */
+    font-size: 12pt;
+    padding-top: 5px;
+">
+                                                                            <asp:Label ID="lblRegistrationID0" runat="server" Font-Size="12pt">RegID</asp:Label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>&nbsp;</td>
+                                                        <td>&nbsp;</td>
+                                                    </tr>
+                                                </table>
+
+                                            </div>
+                                </asp:Panel>
+
+                             
+
+    </div>
+    </form>
+</body>
+</html>

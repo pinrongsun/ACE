@@ -1,0 +1,2231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getcontact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_condition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getcontactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getcontactResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getstudent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_condition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getstudentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getstudentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getstaff">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="field" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_condition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getstaffResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getstaffResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStudentByLevel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CourseName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStudentByLevelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStudentByLevelResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateResultGEP12">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StudentID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Reading" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Writing" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Listening" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Speaking" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Overal" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateResultGEP12Response">
+        <s:complexType />
+      </s:element>
+      <s:element name="StaffTaughtByTerm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedField" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StaffTaughtByTermResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StaffTaughtByTermResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StudentResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="StudentID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="AllTerm" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StudentResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StudentResultResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClassesByCourseName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Campus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CourseName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SelectedField" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClassesByCourseNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ClassesByCourseNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTerm">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTermResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTermResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProgramByTerm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Term" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProgramByTermResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProgramByTermResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCourseName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Campus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Program" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCourseNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCourseNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTuitionFee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Campus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Program" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Intensive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTuitionFeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTuitionFeeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Encrypt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="clearText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Decrypt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cipherText" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DecryptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DecryptResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentAcademicRecord">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStudentAcademicRecordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStudentAcademicRecordResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAcademicTerm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAcademicTermResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAcademicTermResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEnrolment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Campus" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NoClass" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Deleted" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="StudentName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TermID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Program" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CourseID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CourseName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClassID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClassDays" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ClassDaysID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ClassTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="StaffName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SecondStaffName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="BookPurchased" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="BookCost" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="WorkBookPurchased" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="WorkBookCost" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CDPurchased" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="CDCost" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="Room" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="CourseCost" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Credit" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="FlipFlop" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sponsored" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="StaffSponsor" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="SponsorID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SponsorName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Discount" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="Total" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="CreatedBy" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Exception" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExceptionDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EnrollmentStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PaymentType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEnrolmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddEnrolmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataFromTable_Trial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DisplayFields" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Condition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortOrder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataFromTable_TrialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataFromTable_TrialResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataFromTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DisplayFields" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Condition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortOrder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataFromTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataFromTableResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertToTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldsName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Values" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertToTableResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateValueInTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TableName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatingFieldNValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Condition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateValueInTableResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getCourseCost">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CourseID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isPP" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="isIntensive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCourseCostResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCourseCostResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadClassese">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Term" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CamPus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadClasseseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadClasseseResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClassesColor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClassesColorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetClassesColorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataTable" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+            <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="double" type="s:double" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getcontactSoapIn">
+    <wsdl:part name="parameters" element="tns:getcontact" />
+  </wsdl:message>
+  <wsdl:message name="getcontactSoapOut">
+    <wsdl:part name="parameters" element="tns:getcontactResponse" />
+  </wsdl:message>
+  <wsdl:message name="getstudentSoapIn">
+    <wsdl:part name="parameters" element="tns:getstudent" />
+  </wsdl:message>
+  <wsdl:message name="getstudentSoapOut">
+    <wsdl:part name="parameters" element="tns:getstudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="getstaffSoapIn">
+    <wsdl:part name="parameters" element="tns:getstaff" />
+  </wsdl:message>
+  <wsdl:message name="getstaffSoapOut">
+    <wsdl:part name="parameters" element="tns:getstaffResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStudentByLevelSoapIn">
+    <wsdl:part name="parameters" element="tns:getStudentByLevel" />
+  </wsdl:message>
+  <wsdl:message name="getStudentByLevelSoapOut">
+    <wsdl:part name="parameters" element="tns:getStudentByLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResultGEP12SoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateResultGEP12" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResultGEP12SoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateResultGEP12Response" />
+  </wsdl:message>
+  <wsdl:message name="StaffTaughtByTermSoapIn">
+    <wsdl:part name="parameters" element="tns:StaffTaughtByTerm" />
+  </wsdl:message>
+  <wsdl:message name="StaffTaughtByTermSoapOut">
+    <wsdl:part name="parameters" element="tns:StaffTaughtByTermResponse" />
+  </wsdl:message>
+  <wsdl:message name="StudentResultSoapIn">
+    <wsdl:part name="parameters" element="tns:StudentResult" />
+  </wsdl:message>
+  <wsdl:message name="StudentResultSoapOut">
+    <wsdl:part name="parameters" element="tns:StudentResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClassesByCourseNameSoapIn">
+    <wsdl:part name="parameters" element="tns:ClassesByCourseName" />
+  </wsdl:message>
+  <wsdl:message name="ClassesByCourseNameSoapOut">
+    <wsdl:part name="parameters" element="tns:ClassesByCourseNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTermSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTerm" />
+  </wsdl:message>
+  <wsdl:message name="GetTermSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTermResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByTermSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProgramByTerm" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByTermSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProgramByTermResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCourseName" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCourseNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTuitionFeeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTuitionFee" />
+  </wsdl:message>
+  <wsdl:message name="GetTuitionFeeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTuitionFeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="EncryptSoapIn">
+    <wsdl:part name="parameters" element="tns:Encrypt" />
+  </wsdl:message>
+  <wsdl:message name="EncryptSoapOut">
+    <wsdl:part name="parameters" element="tns:EncryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="DecryptSoapIn">
+    <wsdl:part name="parameters" element="tns:Decrypt" />
+  </wsdl:message>
+  <wsdl:message name="DecryptSoapOut">
+    <wsdl:part name="parameters" element="tns:DecryptResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentAcademicRecordSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStudentAcademicRecord" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentAcademicRecordSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStudentAcademicRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAcademicTermSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAcademicTerm" />
+  </wsdl:message>
+  <wsdl:message name="GetAcademicTermSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAcademicTermResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddEnrolmentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEnrolment" />
+  </wsdl:message>
+  <wsdl:message name="AddEnrolmentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEnrolmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTable_TrialSoapIn">
+    <wsdl:part name="parameters" element="tns:getDataFromTable_Trial" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTable_TrialSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataFromTable_TrialResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTableSoapIn">
+    <wsdl:part name="parameters" element="tns:getDataFromTable" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTableSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataFromTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertToTableSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertToTable" />
+  </wsdl:message>
+  <wsdl:message name="InsertToTableSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertToTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValueInTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateValueInTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValueInTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateValueInTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCourseCostSoapIn">
+    <wsdl:part name="parameters" element="tns:getCourseCost" />
+  </wsdl:message>
+  <wsdl:message name="getCourseCostSoapOut">
+    <wsdl:part name="parameters" element="tns:getCourseCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadClasseseSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadClassese" />
+  </wsdl:message>
+  <wsdl:message name="LoadClasseseSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadClasseseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClassesColorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetClassesColor" />
+  </wsdl:message>
+  <wsdl:message name="GetClassesColorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetClassesColorResponse" />
+  </wsdl:message>
+  <wsdl:message name="getcontactHttpGetIn">
+    <wsdl:part name="_condition" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getcontactHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getstudentHttpGetIn">
+    <wsdl:part name="_condition" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getstudentHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getstaffHttpGetIn">
+    <wsdl:part name="field" type="s:string" />
+    <wsdl:part name="_condition" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getstaffHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getStudentByLevelHttpGetIn">
+    <wsdl:part name="SelectedField" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+    <wsdl:part name="CourseName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getStudentByLevelHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResultGEP12HttpGetIn">
+    <wsdl:part name="StudentID" type="s:string" />
+    <wsdl:part name="Reading" type="s:string" />
+    <wsdl:part name="Writing" type="s:string" />
+    <wsdl:part name="Listening" type="s:string" />
+    <wsdl:part name="Speaking" type="s:string" />
+    <wsdl:part name="Overal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResultGEP12HttpGetOut" />
+  <wsdl:message name="StaffTaughtByTermHttpGetIn">
+    <wsdl:part name="SelectedField" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StaffTaughtByTermHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="StudentResultHttpGetIn">
+    <wsdl:part name="StudentID" type="s:string" />
+    <wsdl:part name="AllTerm" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StudentResultHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="ClassesByCourseNameHttpGetIn">
+    <wsdl:part name="Campus" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+    <wsdl:part name="CourseName" type="s:string" />
+    <wsdl:part name="SelectedField" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClassesByCourseNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTermHttpGetIn" />
+  <wsdl:message name="GetTermHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByTermHttpGetIn">
+    <wsdl:part name="Term" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByTermHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseNameHttpGetIn">
+    <wsdl:part name="Campus" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+    <wsdl:part name="Program" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTuitionFeeHttpGetIn">
+    <wsdl:part name="Campus" type="s:string" />
+    <wsdl:part name="Program" type="s:string" />
+    <wsdl:part name="Intensive" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTuitionFeeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="EncryptHttpGetIn">
+    <wsdl:part name="clearText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptHttpGetIn">
+    <wsdl:part name="cipherText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentAcademicRecordHttpGetIn">
+    <wsdl:part name="ContactID" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentAcademicRecordHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetAcademicTermHttpGetIn">
+    <wsdl:part name="ContactID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAcademicTermHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="AddEnrolmentHttpGetIn">
+    <wsdl:part name="Campus" type="s:string" />
+    <wsdl:part name="NoClass" type="s:string" />
+    <wsdl:part name="Deleted" type="s:string" />
+    <wsdl:part name="ContactID" type="s:string" />
+    <wsdl:part name="StudentName" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+    <wsdl:part name="TermID" type="s:string" />
+    <wsdl:part name="Program" type="s:string" />
+    <wsdl:part name="CourseID" type="s:string" />
+    <wsdl:part name="CourseName" type="s:string" />
+    <wsdl:part name="ClassID" type="s:string" />
+    <wsdl:part name="ClassDays" type="s:string" />
+    <wsdl:part name="ClassDaysID" type="s:string" />
+    <wsdl:part name="ClassTime" type="s:string" />
+    <wsdl:part name="StaffName" type="s:string" />
+    <wsdl:part name="SecondStaffName" type="s:string" />
+    <wsdl:part name="BookPurchased" type="s:string" />
+    <wsdl:part name="BookCost" type="s:string" />
+    <wsdl:part name="WorkBookPurchased" type="s:string" />
+    <wsdl:part name="WorkBookCost" type="s:string" />
+    <wsdl:part name="CDPurchased" type="s:string" />
+    <wsdl:part name="CDCost" type="s:string" />
+    <wsdl:part name="Room" type="s:string" />
+    <wsdl:part name="CourseCost" type="s:string" />
+    <wsdl:part name="Credit" type="s:string" />
+    <wsdl:part name="FlipFlop" type="s:string" />
+    <wsdl:part name="Sponsored" type="s:string" />
+    <wsdl:part name="StaffSponsor" type="s:string" />
+    <wsdl:part name="SponsorID" type="s:string" />
+    <wsdl:part name="SponsorName" type="s:string" />
+    <wsdl:part name="Discount" type="s:string" />
+    <wsdl:part name="Total" type="s:string" />
+    <wsdl:part name="CreatedDate" type="s:string" />
+    <wsdl:part name="CreatedBy" type="s:string" />
+    <wsdl:part name="Exception" type="s:string" />
+    <wsdl:part name="ExceptionDescription" type="s:string" />
+    <wsdl:part name="EnrollmentStatus" type="s:string" />
+    <wsdl:part name="PaymentType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddEnrolmentHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTable_TrialHttpGetIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="DisplayFields" type="s:string" />
+    <wsdl:part name="SortField" type="s:string" />
+    <wsdl:part name="Condition" type="s:string" />
+    <wsdl:part name="SortOrder" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTable_TrialHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTableHttpGetIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="DisplayFields" type="s:string" />
+    <wsdl:part name="SortField" type="s:string" />
+    <wsdl:part name="Condition" type="s:string" />
+    <wsdl:part name="SortOrder" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTableHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="InsertToTableHttpGetIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="FieldsName" type="s:string" />
+    <wsdl:part name="Values" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertToTableHttpGetOut" />
+  <wsdl:message name="UpdateValueInTableHttpGetIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="UpdatingFieldNValue" type="s:string" />
+    <wsdl:part name="Condition" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValueInTableHttpGetOut" />
+  <wsdl:message name="getCourseCostHttpGetIn">
+    <wsdl:part name="CourseID" type="s:string" />
+    <wsdl:part name="isPP" type="s:string" />
+    <wsdl:part name="isIntensive" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCourseCostHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="LoadClasseseHttpGetIn">
+    <wsdl:part name="ContactID" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+    <wsdl:part name="CamPus" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoadClasseseHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getcontactHttpPostIn">
+    <wsdl:part name="_condition" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getcontactHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getstudentHttpPostIn">
+    <wsdl:part name="_condition" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getstudentHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getstaffHttpPostIn">
+    <wsdl:part name="field" type="s:string" />
+    <wsdl:part name="_condition" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getstaffHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="getStudentByLevelHttpPostIn">
+    <wsdl:part name="SelectedField" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+    <wsdl:part name="CourseName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getStudentByLevelHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResultGEP12HttpPostIn">
+    <wsdl:part name="StudentID" type="s:string" />
+    <wsdl:part name="Reading" type="s:string" />
+    <wsdl:part name="Writing" type="s:string" />
+    <wsdl:part name="Listening" type="s:string" />
+    <wsdl:part name="Speaking" type="s:string" />
+    <wsdl:part name="Overal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateResultGEP12HttpPostOut" />
+  <wsdl:message name="StaffTaughtByTermHttpPostIn">
+    <wsdl:part name="SelectedField" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StaffTaughtByTermHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="StudentResultHttpPostIn">
+    <wsdl:part name="StudentID" type="s:string" />
+    <wsdl:part name="AllTerm" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="StudentResultHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="ClassesByCourseNameHttpPostIn">
+    <wsdl:part name="Campus" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+    <wsdl:part name="CourseName" type="s:string" />
+    <wsdl:part name="SelectedField" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ClassesByCourseNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTermHttpPostIn" />
+  <wsdl:message name="GetTermHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByTermHttpPostIn">
+    <wsdl:part name="Term" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProgramByTermHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseNameHttpPostIn">
+    <wsdl:part name="Campus" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+    <wsdl:part name="Program" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCourseNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetTuitionFeeHttpPostIn">
+    <wsdl:part name="Campus" type="s:string" />
+    <wsdl:part name="Program" type="s:string" />
+    <wsdl:part name="Intensive" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTuitionFeeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="EncryptHttpPostIn">
+    <wsdl:part name="clearText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptHttpPostIn">
+    <wsdl:part name="cipherText" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentAcademicRecordHttpPostIn">
+    <wsdl:part name="ContactID" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStudentAcademicRecordHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="GetAcademicTermHttpPostIn">
+    <wsdl:part name="ContactID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAcademicTermHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:message name="AddEnrolmentHttpPostIn">
+    <wsdl:part name="Campus" type="s:string" />
+    <wsdl:part name="NoClass" type="s:string" />
+    <wsdl:part name="Deleted" type="s:string" />
+    <wsdl:part name="ContactID" type="s:string" />
+    <wsdl:part name="StudentName" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+    <wsdl:part name="TermID" type="s:string" />
+    <wsdl:part name="Program" type="s:string" />
+    <wsdl:part name="CourseID" type="s:string" />
+    <wsdl:part name="CourseName" type="s:string" />
+    <wsdl:part name="ClassID" type="s:string" />
+    <wsdl:part name="ClassDays" type="s:string" />
+    <wsdl:part name="ClassDaysID" type="s:string" />
+    <wsdl:part name="ClassTime" type="s:string" />
+    <wsdl:part name="StaffName" type="s:string" />
+    <wsdl:part name="SecondStaffName" type="s:string" />
+    <wsdl:part name="BookPurchased" type="s:string" />
+    <wsdl:part name="BookCost" type="s:string" />
+    <wsdl:part name="WorkBookPurchased" type="s:string" />
+    <wsdl:part name="WorkBookCost" type="s:string" />
+    <wsdl:part name="CDPurchased" type="s:string" />
+    <wsdl:part name="CDCost" type="s:string" />
+    <wsdl:part name="Room" type="s:string" />
+    <wsdl:part name="CourseCost" type="s:string" />
+    <wsdl:part name="Credit" type="s:string" />
+    <wsdl:part name="FlipFlop" type="s:string" />
+    <wsdl:part name="Sponsored" type="s:string" />
+    <wsdl:part name="StaffSponsor" type="s:string" />
+    <wsdl:part name="SponsorID" type="s:string" />
+    <wsdl:part name="SponsorName" type="s:string" />
+    <wsdl:part name="Discount" type="s:string" />
+    <wsdl:part name="Total" type="s:string" />
+    <wsdl:part name="CreatedDate" type="s:string" />
+    <wsdl:part name="CreatedBy" type="s:string" />
+    <wsdl:part name="Exception" type="s:string" />
+    <wsdl:part name="ExceptionDescription" type="s:string" />
+    <wsdl:part name="EnrollmentStatus" type="s:string" />
+    <wsdl:part name="PaymentType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddEnrolmentHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTable_TrialHttpPostIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="DisplayFields" type="s:string" />
+    <wsdl:part name="SortField" type="s:string" />
+    <wsdl:part name="Condition" type="s:string" />
+    <wsdl:part name="SortOrder" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTable_TrialHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTableHttpPostIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="DisplayFields" type="s:string" />
+    <wsdl:part name="SortField" type="s:string" />
+    <wsdl:part name="Condition" type="s:string" />
+    <wsdl:part name="SortOrder" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getDataFromTableHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="InsertToTableHttpPostIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="FieldsName" type="s:string" />
+    <wsdl:part name="Values" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertToTableHttpPostOut" />
+  <wsdl:message name="UpdateValueInTableHttpPostIn">
+    <wsdl:part name="TableName" type="s:string" />
+    <wsdl:part name="UpdatingFieldNValue" type="s:string" />
+    <wsdl:part name="Condition" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateValueInTableHttpPostOut" />
+  <wsdl:message name="getCourseCostHttpPostIn">
+    <wsdl:part name="CourseID" type="s:string" />
+    <wsdl:part name="isPP" type="s:string" />
+    <wsdl:part name="isIntensive" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCourseCostHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="LoadClasseseHttpPostIn">
+    <wsdl:part name="ContactID" type="s:string" />
+    <wsdl:part name="Term" type="s:string" />
+    <wsdl:part name="CamPus" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LoadClasseseHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataTable" />
+  </wsdl:message>
+  <wsdl:portType name="edbserviceSoap">
+    <wsdl:operation name="getcontact">
+      <wsdl:input message="tns:getcontactSoapIn" />
+      <wsdl:output message="tns:getcontactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getstudent">
+      <wsdl:input message="tns:getstudentSoapIn" />
+      <wsdl:output message="tns:getstudentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getstaff">
+      <wsdl:input message="tns:getstaffSoapIn" />
+      <wsdl:output message="tns:getstaffSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStudentByLevel">
+      <wsdl:input message="tns:getStudentByLevelSoapIn" />
+      <wsdl:output message="tns:getStudentByLevelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResultGEP12">
+      <wsdl:input message="tns:UpdateResultGEP12SoapIn" />
+      <wsdl:output message="tns:UpdateResultGEP12SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StaffTaughtByTerm">
+      <wsdl:input message="tns:StaffTaughtByTermSoapIn" />
+      <wsdl:output message="tns:StaffTaughtByTermSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StudentResult">
+      <wsdl:input message="tns:StudentResultSoapIn" />
+      <wsdl:output message="tns:StudentResultSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClassesByCourseName">
+      <wsdl:input message="tns:ClassesByCourseNameSoapIn" />
+      <wsdl:output message="tns:ClassesByCourseNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTerm">
+      <wsdl:input message="tns:GetTermSoapIn" />
+      <wsdl:output message="tns:GetTermSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByTerm">
+      <wsdl:input message="tns:GetProgramByTermSoapIn" />
+      <wsdl:output message="tns:GetProgramByTermSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseName">
+      <wsdl:input message="tns:GetCourseNameSoapIn" />
+      <wsdl:output message="tns:GetCourseNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTuitionFee">
+      <wsdl:input message="tns:GetTuitionFeeSoapIn" />
+      <wsdl:output message="tns:GetTuitionFeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <wsdl:input message="tns:EncryptSoapIn" />
+      <wsdl:output message="tns:EncryptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Decrypt">
+      <wsdl:input message="tns:DecryptSoapIn" />
+      <wsdl:output message="tns:DecryptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentAcademicRecord">
+      <wsdl:input message="tns:GetStudentAcademicRecordSoapIn" />
+      <wsdl:output message="tns:GetStudentAcademicRecordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAcademicTerm">
+      <wsdl:input message="tns:GetAcademicTermSoapIn" />
+      <wsdl:output message="tns:GetAcademicTermSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEnrolment">
+      <wsdl:input message="tns:AddEnrolmentSoapIn" />
+      <wsdl:output message="tns:AddEnrolmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable_Trial">
+      <wsdl:input message="tns:getDataFromTable_TrialSoapIn" />
+      <wsdl:output message="tns:getDataFromTable_TrialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable">
+      <wsdl:input message="tns:getDataFromTableSoapIn" />
+      <wsdl:output message="tns:getDataFromTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertToTable">
+      <wsdl:input message="tns:InsertToTableSoapIn" />
+      <wsdl:output message="tns:InsertToTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValueInTable">
+      <wsdl:input message="tns:UpdateValueInTableSoapIn" />
+      <wsdl:output message="tns:UpdateValueInTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCourseCost">
+      <wsdl:input message="tns:getCourseCostSoapIn" />
+      <wsdl:output message="tns:getCourseCostSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadClassese">
+      <wsdl:input message="tns:LoadClasseseSoapIn" />
+      <wsdl:output message="tns:LoadClasseseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClassesColor">
+      <wsdl:input message="tns:GetClassesColorSoapIn" />
+      <wsdl:output message="tns:GetClassesColorSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="edbserviceHttpGet">
+    <wsdl:operation name="getcontact">
+      <wsdl:input message="tns:getcontactHttpGetIn" />
+      <wsdl:output message="tns:getcontactHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getstudent">
+      <wsdl:input message="tns:getstudentHttpGetIn" />
+      <wsdl:output message="tns:getstudentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getstaff">
+      <wsdl:input message="tns:getstaffHttpGetIn" />
+      <wsdl:output message="tns:getstaffHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStudentByLevel">
+      <wsdl:input message="tns:getStudentByLevelHttpGetIn" />
+      <wsdl:output message="tns:getStudentByLevelHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResultGEP12">
+      <wsdl:input message="tns:UpdateResultGEP12HttpGetIn" />
+      <wsdl:output message="tns:UpdateResultGEP12HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StaffTaughtByTerm">
+      <wsdl:input message="tns:StaffTaughtByTermHttpGetIn" />
+      <wsdl:output message="tns:StaffTaughtByTermHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StudentResult">
+      <wsdl:input message="tns:StudentResultHttpGetIn" />
+      <wsdl:output message="tns:StudentResultHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClassesByCourseName">
+      <wsdl:input message="tns:ClassesByCourseNameHttpGetIn" />
+      <wsdl:output message="tns:ClassesByCourseNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTerm">
+      <wsdl:input message="tns:GetTermHttpGetIn" />
+      <wsdl:output message="tns:GetTermHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByTerm">
+      <wsdl:input message="tns:GetProgramByTermHttpGetIn" />
+      <wsdl:output message="tns:GetProgramByTermHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseName">
+      <wsdl:input message="tns:GetCourseNameHttpGetIn" />
+      <wsdl:output message="tns:GetCourseNameHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTuitionFee">
+      <wsdl:input message="tns:GetTuitionFeeHttpGetIn" />
+      <wsdl:output message="tns:GetTuitionFeeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <wsdl:input message="tns:EncryptHttpGetIn" />
+      <wsdl:output message="tns:EncryptHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Decrypt">
+      <wsdl:input message="tns:DecryptHttpGetIn" />
+      <wsdl:output message="tns:DecryptHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentAcademicRecord">
+      <wsdl:input message="tns:GetStudentAcademicRecordHttpGetIn" />
+      <wsdl:output message="tns:GetStudentAcademicRecordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAcademicTerm">
+      <wsdl:input message="tns:GetAcademicTermHttpGetIn" />
+      <wsdl:output message="tns:GetAcademicTermHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEnrolment">
+      <wsdl:input message="tns:AddEnrolmentHttpGetIn" />
+      <wsdl:output message="tns:AddEnrolmentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable_Trial">
+      <wsdl:input message="tns:getDataFromTable_TrialHttpGetIn" />
+      <wsdl:output message="tns:getDataFromTable_TrialHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable">
+      <wsdl:input message="tns:getDataFromTableHttpGetIn" />
+      <wsdl:output message="tns:getDataFromTableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertToTable">
+      <wsdl:input message="tns:InsertToTableHttpGetIn" />
+      <wsdl:output message="tns:InsertToTableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValueInTable">
+      <wsdl:input message="tns:UpdateValueInTableHttpGetIn" />
+      <wsdl:output message="tns:UpdateValueInTableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCourseCost">
+      <wsdl:input message="tns:getCourseCostHttpGetIn" />
+      <wsdl:output message="tns:getCourseCostHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadClassese">
+      <wsdl:input message="tns:LoadClasseseHttpGetIn" />
+      <wsdl:output message="tns:LoadClasseseHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="edbserviceHttpPost">
+    <wsdl:operation name="getcontact">
+      <wsdl:input message="tns:getcontactHttpPostIn" />
+      <wsdl:output message="tns:getcontactHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getstudent">
+      <wsdl:input message="tns:getstudentHttpPostIn" />
+      <wsdl:output message="tns:getstudentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getstaff">
+      <wsdl:input message="tns:getstaffHttpPostIn" />
+      <wsdl:output message="tns:getstaffHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStudentByLevel">
+      <wsdl:input message="tns:getStudentByLevelHttpPostIn" />
+      <wsdl:output message="tns:getStudentByLevelHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResultGEP12">
+      <wsdl:input message="tns:UpdateResultGEP12HttpPostIn" />
+      <wsdl:output message="tns:UpdateResultGEP12HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StaffTaughtByTerm">
+      <wsdl:input message="tns:StaffTaughtByTermHttpPostIn" />
+      <wsdl:output message="tns:StaffTaughtByTermHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StudentResult">
+      <wsdl:input message="tns:StudentResultHttpPostIn" />
+      <wsdl:output message="tns:StudentResultHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClassesByCourseName">
+      <wsdl:input message="tns:ClassesByCourseNameHttpPostIn" />
+      <wsdl:output message="tns:ClassesByCourseNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTerm">
+      <wsdl:input message="tns:GetTermHttpPostIn" />
+      <wsdl:output message="tns:GetTermHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByTerm">
+      <wsdl:input message="tns:GetProgramByTermHttpPostIn" />
+      <wsdl:output message="tns:GetProgramByTermHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseName">
+      <wsdl:input message="tns:GetCourseNameHttpPostIn" />
+      <wsdl:output message="tns:GetCourseNameHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTuitionFee">
+      <wsdl:input message="tns:GetTuitionFeeHttpPostIn" />
+      <wsdl:output message="tns:GetTuitionFeeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <wsdl:input message="tns:EncryptHttpPostIn" />
+      <wsdl:output message="tns:EncryptHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Decrypt">
+      <wsdl:input message="tns:DecryptHttpPostIn" />
+      <wsdl:output message="tns:DecryptHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentAcademicRecord">
+      <wsdl:input message="tns:GetStudentAcademicRecordHttpPostIn" />
+      <wsdl:output message="tns:GetStudentAcademicRecordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAcademicTerm">
+      <wsdl:input message="tns:GetAcademicTermHttpPostIn" />
+      <wsdl:output message="tns:GetAcademicTermHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEnrolment">
+      <wsdl:input message="tns:AddEnrolmentHttpPostIn" />
+      <wsdl:output message="tns:AddEnrolmentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable_Trial">
+      <wsdl:input message="tns:getDataFromTable_TrialHttpPostIn" />
+      <wsdl:output message="tns:getDataFromTable_TrialHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable">
+      <wsdl:input message="tns:getDataFromTableHttpPostIn" />
+      <wsdl:output message="tns:getDataFromTableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertToTable">
+      <wsdl:input message="tns:InsertToTableHttpPostIn" />
+      <wsdl:output message="tns:InsertToTableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValueInTable">
+      <wsdl:input message="tns:UpdateValueInTableHttpPostIn" />
+      <wsdl:output message="tns:UpdateValueInTableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCourseCost">
+      <wsdl:input message="tns:getCourseCostHttpPostIn" />
+      <wsdl:output message="tns:getCourseCostHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadClassese">
+      <wsdl:input message="tns:LoadClasseseHttpPostIn" />
+      <wsdl:output message="tns:LoadClasseseHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="edbserviceSoap" type="tns:edbserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getcontact">
+      <soap:operation soapAction="http://tempuri.org/getcontact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getstudent">
+      <soap:operation soapAction="http://tempuri.org/getstudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getstaff">
+      <soap:operation soapAction="http://tempuri.org/getstaff" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStudentByLevel">
+      <soap:operation soapAction="http://tempuri.org/getStudentByLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResultGEP12">
+      <soap:operation soapAction="http://tempuri.org/UpdateResultGEP12" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StaffTaughtByTerm">
+      <soap:operation soapAction="http://tempuri.org/StaffTaughtByTerm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentResult">
+      <soap:operation soapAction="http://tempuri.org/StudentResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClassesByCourseName">
+      <soap:operation soapAction="http://tempuri.org/ClassesByCourseName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerm">
+      <soap:operation soapAction="http://tempuri.org/GetTerm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByTerm">
+      <soap:operation soapAction="http://tempuri.org/GetProgramByTerm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseName">
+      <soap:operation soapAction="http://tempuri.org/GetCourseName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTuitionFee">
+      <soap:operation soapAction="http://tempuri.org/GetTuitionFee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <soap:operation soapAction="http://tempuri.org/Encrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Decrypt">
+      <soap:operation soapAction="http://tempuri.org/Decrypt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentAcademicRecord">
+      <soap:operation soapAction="http://tempuri.org/GetStudentAcademicRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAcademicTerm">
+      <soap:operation soapAction="http://tempuri.org/GetAcademicTerm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEnrolment">
+      <soap:operation soapAction="http://tempuri.org/AddEnrolment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable_Trial">
+      <soap:operation soapAction="http://tempuri.org/getDataFromTable_Trial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable">
+      <soap:operation soapAction="http://tempuri.org/getDataFromTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertToTable">
+      <soap:operation soapAction="http://tempuri.org/InsertToTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValueInTable">
+      <soap:operation soapAction="http://tempuri.org/UpdateValueInTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCourseCost">
+      <soap:operation soapAction="http://tempuri.org/getCourseCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadClassese">
+      <soap:operation soapAction="http://tempuri.org/LoadClassese" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClassesColor">
+      <soap:operation soapAction="http://tempuri.org/GetClassesColor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="edbserviceSoap12" type="tns:edbserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getcontact">
+      <soap12:operation soapAction="http://tempuri.org/getcontact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getstudent">
+      <soap12:operation soapAction="http://tempuri.org/getstudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getstaff">
+      <soap12:operation soapAction="http://tempuri.org/getstaff" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStudentByLevel">
+      <soap12:operation soapAction="http://tempuri.org/getStudentByLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResultGEP12">
+      <soap12:operation soapAction="http://tempuri.org/UpdateResultGEP12" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StaffTaughtByTerm">
+      <soap12:operation soapAction="http://tempuri.org/StaffTaughtByTerm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentResult">
+      <soap12:operation soapAction="http://tempuri.org/StudentResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClassesByCourseName">
+      <soap12:operation soapAction="http://tempuri.org/ClassesByCourseName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerm">
+      <soap12:operation soapAction="http://tempuri.org/GetTerm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByTerm">
+      <soap12:operation soapAction="http://tempuri.org/GetProgramByTerm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseName">
+      <soap12:operation soapAction="http://tempuri.org/GetCourseName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTuitionFee">
+      <soap12:operation soapAction="http://tempuri.org/GetTuitionFee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <soap12:operation soapAction="http://tempuri.org/Encrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Decrypt">
+      <soap12:operation soapAction="http://tempuri.org/Decrypt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentAcademicRecord">
+      <soap12:operation soapAction="http://tempuri.org/GetStudentAcademicRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAcademicTerm">
+      <soap12:operation soapAction="http://tempuri.org/GetAcademicTerm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEnrolment">
+      <soap12:operation soapAction="http://tempuri.org/AddEnrolment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable_Trial">
+      <soap12:operation soapAction="http://tempuri.org/getDataFromTable_Trial" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable">
+      <soap12:operation soapAction="http://tempuri.org/getDataFromTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertToTable">
+      <soap12:operation soapAction="http://tempuri.org/InsertToTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValueInTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateValueInTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCourseCost">
+      <soap12:operation soapAction="http://tempuri.org/getCourseCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadClassese">
+      <soap12:operation soapAction="http://tempuri.org/LoadClassese" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClassesColor">
+      <soap12:operation soapAction="http://tempuri.org/GetClassesColor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="edbserviceHttpGet" type="tns:edbserviceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="getcontact">
+      <http:operation location="/getcontact" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getstudent">
+      <http:operation location="/getstudent" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getstaff">
+      <http:operation location="/getstaff" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStudentByLevel">
+      <http:operation location="/getStudentByLevel" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResultGEP12">
+      <http:operation location="/UpdateResultGEP12" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="StaffTaughtByTerm">
+      <http:operation location="/StaffTaughtByTerm" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentResult">
+      <http:operation location="/StudentResult" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClassesByCourseName">
+      <http:operation location="/ClassesByCourseName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerm">
+      <http:operation location="/GetTerm" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByTerm">
+      <http:operation location="/GetProgramByTerm" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseName">
+      <http:operation location="/GetCourseName" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTuitionFee">
+      <http:operation location="/GetTuitionFee" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <http:operation location="/Encrypt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Decrypt">
+      <http:operation location="/Decrypt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentAcademicRecord">
+      <http:operation location="/GetStudentAcademicRecord" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAcademicTerm">
+      <http:operation location="/GetAcademicTerm" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEnrolment">
+      <http:operation location="/AddEnrolment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable_Trial">
+      <http:operation location="/getDataFromTable_Trial" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable">
+      <http:operation location="/getDataFromTable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertToTable">
+      <http:operation location="/InsertToTable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValueInTable">
+      <http:operation location="/UpdateValueInTable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getCourseCost">
+      <http:operation location="/getCourseCost" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadClassese">
+      <http:operation location="/LoadClassese" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="edbserviceHttpPost" type="tns:edbserviceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="getcontact">
+      <http:operation location="/getcontact" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getstudent">
+      <http:operation location="/getstudent" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getstaff">
+      <http:operation location="/getstaff" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStudentByLevel">
+      <http:operation location="/getStudentByLevel" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateResultGEP12">
+      <http:operation location="/UpdateResultGEP12" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="StaffTaughtByTerm">
+      <http:operation location="/StaffTaughtByTerm" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentResult">
+      <http:operation location="/StudentResult" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClassesByCourseName">
+      <http:operation location="/ClassesByCourseName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTerm">
+      <http:operation location="/GetTerm" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProgramByTerm">
+      <http:operation location="/GetProgramByTerm" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCourseName">
+      <http:operation location="/GetCourseName" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTuitionFee">
+      <http:operation location="/GetTuitionFee" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encrypt">
+      <http:operation location="/Encrypt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Decrypt">
+      <http:operation location="/Decrypt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentAcademicRecord">
+      <http:operation location="/GetStudentAcademicRecord" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAcademicTerm">
+      <http:operation location="/GetAcademicTerm" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEnrolment">
+      <http:operation location="/AddEnrolment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable_Trial">
+      <http:operation location="/getDataFromTable_Trial" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataFromTable">
+      <http:operation location="/getDataFromTable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertToTable">
+      <http:operation location="/InsertToTable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateValueInTable">
+      <http:operation location="/UpdateValueInTable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="getCourseCost">
+      <http:operation location="/getCourseCost" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadClassese">
+      <http:operation location="/LoadClassese" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="edbservice">
+    <wsdl:port name="edbserviceSoap" binding="tns:edbserviceSoap">
+      <soap:address location="http://110.74.211.212:81/edbservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="edbserviceSoap12" binding="tns:edbserviceSoap12">
+      <soap12:address location="http://110.74.211.212:81/edbservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="edbserviceHttpGet" binding="tns:edbserviceHttpGet">
+      <http:address location="http://110.74.211.212:81/edbservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="edbserviceHttpPost" binding="tns:edbserviceHttpPost">
+      <http:address location="http://110.74.211.212:81/edbservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,375 @@
+﻿a {
+  text-decoration: none;
+  color: #548fa7; }
+
+a:hover {
+  text-decoration: underline; }
+
+
+    .resource_left{
+        width:15%;
+    }
+
+    .resource_right{
+        width:85%;
+    }
+
+    #container{
+     
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+       
+    }
+
+    #container_whole{
+      
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        /*background-color:#e9f5fe;*/
+        height:500px;
+    }
+
+    #container_header{
+        
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    #container_menu{
+        
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:white;
+        height:auto;
+        overflow:hidden;
+    }
+
+    .magazine-image{
+            filter: alpha(opacity=100);
+            opacity: 1;
+        }
+
+    .magazine-image:hover{
+        filter: alpha(opacity=80);
+        opacity: .8;
+    }
+
+    .divprevious_issue_begin{
+        width:50%;float:left
+    }
+
+    .divprevious_issue_middle{
+        width:50%;float:left
+    
+    }
+
+    #container_footer{
+       
+       width:100%;
+       height:auto;
+       overflow:hidden;
+       background-color:#808080;
+       color:white;
+       margin-top:0px;
+       padding-top:5px;
+       padding-bottom:5px;
+    }
+
+    #divArticle{
+       
+        width:100%;
+        /*margin-left:10px;margin-right:10px;*/
+        background-color:White;
+    }
+
+    #profile_left{
+        width:25%;margin-right:5%;float:left
+    }
+
+    #profile_right{
+        width:70%;float:left
+    }
+
+    .div_profilename{
+        color:white;text-align:left
+    }
+
+    .div_profiledetail{
+        margin-top:15px;margin-left:0px
+    }
+
+    .profile_button_begin{
+        width:33.20%;height:50px;float:left;background-color:#FF4C4C;
+        
+    }
+
+    .profile_button_next{
+        width:33.33%;height:50px;float:left;border-left:1px solid white;border-right:1px solid white;background-color:#FF4C4C;
+        
+    }
+
+    .div_menu_with_4{
+        width:50%;float:left
+    }
+
+    .div_Enrolment_History_Only{
+        width:100%;float:none;
+    }
+
+    .div_Enrolment_History_Left{
+        width:48%;float:left;margin-top:10px
+    }
+
+    .div_Enrolment_History_Right{
+        width:48%;float:left;margin-left:3%;margin-top:10px
+    }
+
+    .tbl_Enrolment_History{
+        border:1px solid #bfbfbf;max-width:420px;width:100%
+    }
+
+    #divEnrolment_History{
+        width:98%;font-size:14px;margin-left:1%;margin-bottom:10px;margin-right:1%;margin-top:15px
+    }
+
+    .div_AcademicRecord{
+        padding-top:2px;padding-bottom:3px;border-bottom:1px solid #F0F2F6
+    }
+
+    .div_Enrolment_History{
+        padding-top:2px;padding-bottom:3px;border-bottom:1px solid #F0F2F6
+    }
+
+    .div_logo{
+        width:100%
+    }
+
+    .div_calendar1{
+        width:24%;float:left
+    }
+
+    .div_calendar2{
+        border-left:2px solid #efefef;width:25%;float:left
+    }
+
+    #div_whole_calendar{
+        height:auto;overflow:hidden;width:100%;margin:10px
+    }
+
+    #div_whole_calendar1{
+        width:99.5%;border:2px solid #0090CC
+    }
+
+    #div_whole_calendar2{
+        width:99.5%;border:2px solid #0090CC;margin-top:15px
+    }
+
+    .div_holiday1{
+        width:170px;color:red;font-weight:bold;
+    }
+
+    .div_holiday2{
+        width:10px;color:red;font-weight:bold;font-size:small;
+    }
+
+    .div_holiday3{
+        width:400px;padding:5px;
+    }
+
+    .confim_enrol{
+        width:500px;background-color:#f3f3f3;height:200px;box-shadow:#696969 0px 0px 2px 1px
+    }
+
+    #divEnrol_Online_Form{
+        width:99%;margin-right:1%;height:auto;overflow:hidden;font-family: 'Open Sans' , sans-serif
+    }
+
+    #div_body_enrol{
+        margin-left:15px;margin-top:15px;font-size:14px;margin-bottom:20px
+    }
+
+    #div_nextpreviouse{
+        width:100%;margin-left:15px;margin-top:40px
+    }
+
+@media only screen and (max-width:777px) {
+
+    #div_nextpreviouse{
+        width:99%;margin-left:5px;margin-top:40px
+    }
+
+    #div_body_enrol{
+        margin-left:5px;margin-top:15px;font-size:14px;margin-bottom:20px
+    }
+
+    #divEnrol_Online_Form{
+        width:97%;margin-right:2%;height:auto;overflow:hidden;font-family: 'Open Sans' , sans-serif
+    }
+
+    .confim_enrol{
+        width:98%;margin-left:1%;margin-right:1%;background-color:#e2e2e2;height:200px;border-radius:10px;box-shadow:#696969 0px 0px 2px 1px
+    }
+
+    .div_holiday1{
+        width:40%;color:red;font-weight:bold;font-size:14px;
+    }
+
+    .div_holiday2{
+        width:1%;color:red;font-weight:bold;font-size:small;
+    }
+
+    .div_holiday3{
+        width:59%;padding:5px;font-size:14px;
+    }
+
+    #div_whole_calendar1{
+        width:98.8%;border:2px solid #0090CC
+    }
+
+    #div_whole_calendar2{
+        width:98.8%;border:2px solid #0090CC
+    }
+
+    #div_whole_calendar{
+        height:auto;overflow:hidden;width:100%;margin:0px
+    }
+
+    .div_calendar1{
+        width:100%;float:none;margin-top:7px;margin-bottom:7px
+    }
+
+    .div_calendar2{
+        border-left:0px solid #efefef;width:100%;float:none;border-top:1px solid #efefef;padding-top:7px;padding-bottom:7px
+    }
+
+    .resource_left{
+        width:30%;
+    }
+
+    .resource_right{
+        width:70%;
+    }
+
+    .div_logo{
+        width:100%
+    }
+
+    #divEnrolment_History{
+        max-width:480px;width:96%;font-size:14px;margin-left:2%;margin-bottom:10px;margin-right:2%
+    }
+
+    .div_Enrolment_History_Only{
+        width:100%;float:none;
+    }
+
+    .div_Enrolment_History_Left{
+        width:100%;float:none;
+    }
+
+    .div_Enrolment_History_Right{
+        width:96%;float:none;margin-left:0%;margin-right:2%
+    }
+
+    .tbl_Enrolment_History{
+        border:1px solid #bfbfbf;width:100%
+    }
+
+    .div_menu_with_4{
+        width:100%;float:none
+    }
+
+    .profile_button_begin{
+        width:33%;height:50px;float:left;background-color:#FF4C4C;
+        
+    }
+
+    .profile_button_next{
+        width:33%;height:50px;float:left;border-left:1px solid white;border-right:1px solid white;background-color:#FF4C4C;
+       
+    }
+
+    .div_profiledetail{
+        margin-top:15px;margin-left:20px
+    }
+
+    .div_profilename{
+        color:white;text-align:center
+    }
+
+    #profile_left{
+        width:100%;margin-right:0%;float:none
+    }
+
+    #profile_right{
+        width:100%;float:none
+    }
+
+    #container{
+ 
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        
+    }
+
+    #container_whole{
+
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        /*background-color:#e9f5fe;*/
+        height:500px;
+    }
+
+    #container_header{
+
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    #container_menu{
+
+        width:100%;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:white;
+        height:auto;
+        overflow:hidden;
+    }
+
+    .magazine-image{
+            filter: alpha(opacity=100);
+            opacity: 1;
+        }
+
+    .magazine-image:hover{
+        filter: alpha(opacity=80);
+        opacity: .8;
+    }
+
+    .divprevious_issue_begin{
+        width:50%;float:left
+    }
+
+    .divprevious_issue_middle{
+        width:50%;float:left
+    
+    }
+
+    #container_footer{
+
+       width:100%;
+       color:white;
+    }
+
+     #divArticle{
+       
+        width:100%;
+    }
+
+}

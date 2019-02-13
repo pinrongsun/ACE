@@ -1,0 +1,209 @@
+﻿Imports System.Data
+Imports System.Data.SqlClient
+
+Partial Class print
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+        If Page.IsPostBack = False Then
+            Dim RegistrationID As Integer = Request.QueryString("RegistrationID")
+            Dim SelectedField As String = "*"
+            Dim ds As DataSet = getDataFromTableCamTESOL("View_Printing2019", _
+                                                         SelectedField, "RegistrationID", "where ReferenceID=" & RegistrationID, "asc")
+            If ds.Tables(0).Rows.Count = 0 Then
+                
+            Else
+                Dim RegistrationCode As String = ds.Tables(0).Rows(0)("RegistrationID").ToString
+                Dim familyName_tag As String = ds.Tables(0).Rows(0)("familyName_tag").ToString
+                Dim GivenName_Tag As String = ds.Tables(0).Rows(0)("GivenName_Tag").ToString
+
+                Dim Position_Tag As String = ds.Tables(0).Rows(0)("Position_Tag").ToString
+                Dim Employer_Tag As String = ds.Tables(0).Rows(0)("Employer_Tag").ToString
+             
+                Dim dietary As String = ds.Tables(0).Rows(0)("dietary").ToString
+                'Dim ResearchSymposium As Boolean = ds.Tables(0).Rows(0)("RS")
+                'Dim WelcomeReception As Boolean = ds.Tables(0).Rows(0)("WelcomeReception")
+
+                'Dim LeadershipForum As Boolean = ds.Tables(0).Rows(0)("LeadershipForum")
+                Dim SelectedConfDay As String = ds.Tables(0).Rows(0)("ConfDays").ToString
+
+               
+
+                'Dim Paid As Boolean = False
+                'Dim Paid_Date As Date
+                'If IsDBNull(ds.Tables(0).Rows(0)("Paid")) = False Then
+                '    Paid = ds.Tables(0).Rows(0)("Paid")
+                '    chkPaid.Checked = Paid
+                '    If Paid = True Then
+                '        Paid_Date = ds.Tables(0).Rows(0)("PaidDate")
+                '        txtPaidDate.Text = Paid_Date.ToString("dd/MM/yyyy HH:mm:ss")
+                '    End If
+                'End If
+
+                lblFamilyName.Text = familyName_tag
+                lblFamilyName0.Text = lblFamilyName.Text
+                lblGivenName.Text = GivenName_Tag
+                lblGivenName0.Text = lblGivenName.Text
+                lblPosition.Text = Position_Tag
+                lblPosition0.Text = lblPosition.Text
+                lblEmployer.Text = Employer_Tag
+                lblEmployer0.Text = lblEmployer.Text
+                
+                lblDietary.Text = dietary
+                lblDietary0.Text = lblDietary.Text
+                lblConfDays.Text = SelectedConfDay
+                lblConfDays0.Text = lblConfDays.Text
+                lblBarcode.Text = "*" & Right(RegistrationCode, 4) & "*"
+                lblBarcode0.Text = lblBarcode.Text
+                lblRegistrationID.Text = RegistrationCode
+                lblRegistrationID0.Text = lblRegistrationID.Text
+
+                Dim MyScript2 As String = "window.print();window.close();"
+                ScriptManager.RegisterClientScriptBlock(Me, Me.GetType(), "openpopup", MyScript2, True)
+            End If
+        End If
+    End Sub
+
+    Private Function getDataFromTableCamTESOL(ByVal TableName As String, ByVal DisplayFields As String, ByVal SortField As String, ByVal Condition As String, ByVal SortOrder As String) As DataSet
+
+        Dim ds As New DataSet
+        Dim cn As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim adapter As New SqlDataAdapter
+        cn.ConnectionString = DalConnection_app.EDBConnectionString
+        cn.Open()
+        cmd.CommandText = "SELECT " & DisplayFields & " FROM " & TableName & " " & Condition & " ORDER BY " & SortField & " " & SortOrder
+
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = cn
+        adapter.SelectCommand = cmd
+        'fill the dataset
+        adapter.Fill(ds)
+        cn.Close()
+        'return the dataset
+        Return ds
+    End Function
+    Private Sub print(OnlineID As String, EnrolID As String)
+
+        Dim edb As New EDBService2.EDBTrialSoapClient
+        Dim dsEnrolHistory As New DataSet
+        If OnlineID = "" Then
+            dsEnrolHistory = edb.getDataFromTable("ViewEnrollwithArchived e inner join [ViewClasses-All] c on e.ClassID=c.ClassID", "e.*,c.CourseBook, c.ClassStartDate, c.ClassEndDate,c.FlipFlopClassID,c.Location", "e.EnrollID", "where e.EnrollID='" & EnrolID & "'", "asc")
+        Else
+            dsEnrolHistory = edb.getDataFromTable("ViewEnrollwithArchived e inner join [ViewClasses-All] c on e.ClassID=c.ClassID", "e.*,c.CourseBook, c.ClassStartDate, c.ClassEndDate,c.FlipFlopClassID,c.Location", "e.EnrollID", "where e.OnlineID='" & OnlineID & "'", "asc")
+        End If
+
+        Dim clReceipt As New clACEReceipt_app
+
+
+
+
+        If dsEnrolHistory.Tables(0).Rows(0)("EnrollmentStatus").ToString = "Paid" Then
+            clReceipt.ID = "Paid"
+        Else
+            clReceipt.ID = "1"
+        End If
+        clReceipt.Term = dsEnrolHistory.Tables(0).Rows(0)("Term").ToString
+        clReceipt.TermStart = CDate(dsEnrolHistory.Tables(0).Rows(0)("ClassStartDate")).Date.ToString("dd/MM/yyyy")
+        clReceipt.TermEnd = CDate(dsEnrolHistory.Tables(0).Rows(0)("ClassEndDate")).Date.ToString("dd/MM/yyyy")
+        clReceipt.StudentName = dsEnrolHistory.Tables(0).Rows(0)("StudentName").ToString
+        clReceipt.StudentID = dsEnrolHistory.Tables(0).Rows(0)("ContactID").ToString
+        clReceipt.Day = dsEnrolHistory.Tables(0).Rows(0)("ClassDays").ToString
+        clReceipt.Room = dsEnrolHistory.Tables(0).Rows(0)("Room").ToString
+        clReceipt.Time = Mid(dsEnrolHistory.Tables(0).Rows(0)("ClassTime").ToString, 1, 2) & ":" & Mid(dsEnrolHistory.Tables(0).Rows(0)("ClassTime").ToString, 3, 2) & " - " & Mid(dsEnrolHistory.Tables(0).Rows(0)("ClassTime").ToString, 5, 2) & ":" & Mid(dsEnrolHistory.Tables(0).Rows(0)("ClassTime").ToString, 7, 2)
+        clReceipt.CourseBook = dsEnrolHistory.Tables(0).Rows(0)("CourseBook").ToString
+        clReceipt.EnrolID = OnlineID
+        clReceipt.CourseCost = "$" & Str(CInt(dsEnrolHistory.Tables(0).Rows(0)("Total").ToString)) & ".00"
+        clReceipt.EnrolledIn = dsEnrolHistory.Tables(0).Rows(0)("CourseName").ToString
+        clReceipt.Campus = Left(dsEnrolHistory.Tables(0).Rows(0)("Room").ToString, 2)
+
+        If dsEnrolHistory.Tables(0).Rows(0)("FlipFlop") = True Then
+            Dim dsFFClass As DataSet = edb.getDataFromTable("tblClasses", "ClassID, Room, Time", "ClassID", "Where ClassID=" & dsEnrolHistory.Tables(0).Rows(0)("FlipFlopClassID").ToString, "asc")
+            clReceipt.FlipFlopRoom = dsFFClass.Tables(0).Rows(0)("Room").ToString
+            clReceipt.FlipFlopTime = Mid(dsFFClass.Tables(0).Rows(0)("Time").ToString, 1, 2) & ":" & Mid(dsFFClass.Tables(0).Rows(0)("Time").ToString, 3, 2) & " - " & Mid(dsFFClass.Tables(0).Rows(0)("Time").ToString, 5, 2) & ":" & Mid(dsFFClass.Tables(0).Rows(0)("Time").ToString, 7, 2)
+
+        Else
+            clReceipt.FlipFlopRoom = ""
+            clReceipt.FlipFlopTime = ""
+        End If
+
+        Dim dtReceipt As New DataTable
+        dtReceipt = LoadACEReceipt(clReceipt)
+        Dim path As String = CutMapPath()
+        'ExportToPDF(path & "CrystalReport.rpt", clReceipt.EnrolID.ToString, dtReceipt, path)
+        'Response.Redirect("~/Receipt/" & test & ".pdf")
+
+
+        Response.ContentType = "application/pdf"
+        Response.AppendHeader("Content-Disposition", "attachment; filename=" & IIf(OnlineID = "", EnrolID, OnlineID) & ".pdf")
+        Response.TransmitFile("~/Receipt/" & clReceipt.EnrolID.ToString & ".pdf")
+        Response.End()
+    End Sub
+
+    
+    Function CutMapPath() As String
+        Dim path() As String
+        Dim pat As String = ""
+        Dim orignal As String = ""
+
+        orignal = Server.MapPath("CrystalReport.rpt")
+
+        path = orignal.Split("\")
+
+        Dim count As Integer = path.Count
+
+        For i = 0 To path.Count - 1
+            If i < path.Count - 1 Then
+                pat = pat & path(i).ToString & "\"
+            End If
+        Next
+
+        Return pat
+
+    End Function
+    Function LoadACEReceipt(clReceipt As clACEReceipt_app) As DataTable
+        Dim dt As New DataTable
+
+        dt.Columns.Add("ID")
+        dt.Columns.Add("Term")
+        dt.Columns.Add("TermStart")
+        dt.Columns.Add("TermEnd")
+        dt.Columns.Add("StudentName")
+        dt.Columns.Add("StudentID")
+        dt.Columns.Add("EnrolledIn")
+        dt.Columns.Add("Day")
+        dt.Columns.Add("Time")
+        dt.Columns.Add("Room")
+        dt.Columns.Add("CourseBook")
+        dt.Columns.Add("EnrolID")
+        dt.Columns.Add("CourseCost")
+        dt.Columns.Add("FlipFlopTime")
+        dt.Columns.Add("FlipFlopRoom")
+        dt.Columns.Add("Campus")
+
+        Dim dr As DataRow = dt.NewRow
+
+        dr("ID") = clReceipt.ID
+        dr("Term") = clReceipt.Term
+        dr("TermStart") = clReceipt.TermStart
+        dr("TermEnd") = clReceipt.TermEnd
+        dr("StudentName") = clReceipt.StudentName
+        dr("StudentID") = clReceipt.StudentID
+        dr("EnrolledIn") = clReceipt.EnrolledIn
+        dr("Day") = clReceipt.Day
+        dr("Time") = clReceipt.Time
+        dr("Room") = clReceipt.Room
+        dr("CourseBook") = clReceipt.CourseBook
+        dr("EnrolID") = clReceipt.EnrolID
+        dr("CourseCost") = clReceipt.CourseCost
+
+        dr("FlipFlopTime") = IIf(clReceipt.FlipFlopTime = "", "", clReceipt.FlipFlopTime)
+        dr("FlipFlopRoom") = clReceipt.FlipFlopRoom
+        dr("Campus") = clReceipt.Campus
+
+        dt.Rows.Add(dr)
+
+        Return dt
+
+    End Function
+End Class

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="camtesol_schedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="table" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Fields" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Condition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SortField" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="camtesol_scheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="camtesol_scheduleResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="camtesol_scheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:camtesol_schedule" />
+  </wsdl:message>
+  <wsdl:message name="camtesol_scheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:camtesol_scheduleResponse" />
+  </wsdl:message>
+  <wsdl:portType name="edbserviceSoap">
+    <wsdl:operation name="camtesol_schedule">
+      <wsdl:input message="tns:camtesol_scheduleSoapIn" />
+      <wsdl:output message="tns:camtesol_scheduleSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="edbserviceSoap" type="tns:edbserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="camtesol_schedule">
+      <soap:operation soapAction="http://tempuri.org/camtesol_schedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="edbserviceSoap12" type="tns:edbserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="camtesol_schedule">
+      <soap12:operation soapAction="http://tempuri.org/camtesol_schedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="edbservice">
+    <wsdl:port name="edbserviceSoap" binding="tns:edbserviceSoap">
+      <soap:address location="http://114.134.189.213/idpservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="edbserviceSoap12" binding="tns:edbserviceSoap12">
+      <soap12:address location="http://114.134.189.213/idpservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
